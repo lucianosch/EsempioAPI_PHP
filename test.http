@@ -1,0 +1,36 @@
+###
+# Legge tutti gli utenti
+###
+GET http://localhost/~luciano/phpapi/api.php
+
+###
+# Legge un utente specifico (id=2)
+###
+GET http://localhost/~luciano/phpapi/api.php?id=1
+
+###
+# Inserisce un nuovo utente
+###
+POST http://localhost/~luciano/phpapi/api.php
+Content-Type: application/json
+
+{
+    "name":"Pippo",
+    "eta":30
+}
+
+###
+# Modifica un utente presente nel DB (id=5)
+###
+PUT http://localhost/~luciano/phpapi/api.php?id=5
+Content-Type: application/json
+
+{
+    "name":"Pippo",
+    "eta":20
+}
+
+###
+# Cancella un utente specificato (id=5)
+###
+DELETE http://localhost/~luciano/phpapi/api.php?id=5
