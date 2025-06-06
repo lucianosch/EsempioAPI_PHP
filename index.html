@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test API Utenti</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Test API Gestione Utenti</h1>
+
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="openTab(event, 'tab1')">GET</button>
+                <button class="tab-button" onclick="openTab(event, 'tab2')">POST</button>
+                <button class="tab-button" onclick="openTab(event, 'tab3')">PUT</button>
+                <button class="tab-button" onclick="openTab(event, 'tab4')">DELETE</button>
+            </div>
+
+            <!-- Tab GET -->
+            <div id="tab1" class="tab-content active">
+                <div class="api-section">
+                    <h3 class="api-title">Ottieni tutti gli utenti</h3>
+                    <button onclick="getAllUsers()">GET / (Tutti gli utenti)</button>
+                    <div id="all-users-response" class="response"></div>
+                </div>
+
+                <div class="api-section">
+                    <h3 class="api-title">Ottieni utente per ID</h3>
+                    <div class="form-group">
+                        <label for="get-user-id">ID Utente:</label>
+                        <input type="number" id="get-user-id" placeholder="Inserisci ID utente">
+                    </div>
+                    <button onclick="getUserById()">GET /?id=ID</button>
+                    <div id="user-by-id-response" class="response"></div>
+                </div>
+            </div>
+
+            <!-- Tab POST -->
+            <div id="tab2" class="tab-content">
+                <div class="api-section">
+                    <h3 class="api-title">Crea nuovo utente</h3>
+                    <div class="form-group">
+                        <label for="post-name">Nome:</label>
+                        <input type="text" id="post-name" placeholder="Nome utente">
+                    </div>
+                    <div class="form-group">
+                        <label for="post-eta">Età:</label>
+                        <input type="number" id="post-eta" placeholder="Età utente">
+                    </div>
+                    <button onclick="createUser()">POST / (Crea utente)</button>
+                    <div id="create-user-response" class="response"></div>
+                </div>
+            </div>
+
+            <!-- Tab PUT -->
+            <div id="tab3" class="tab-content">
+                <div class="api-section">
+                    <h3 class="api-title">Aggiorna utente</h3>
+                    <div class="form-group">
+                        <label for="put-id">ID Utente:</label>
+                        <input type="number" id="put-id" placeholder="ID utente da aggiornare">
+                    </div>
+                    <div class="form-group">
+                        <label for="put-name">Nuovo nome:</label>
+                        <input type="text" id="put-name" placeholder="Nuovo nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="put-eta">Nuova età:</label>
+                        <input type="number" id="put-eta" placeholder="Nuova età">
+                    </div>
+                    <button onclick="updateUser()">PUT /?id=ID (Aggiorna utente)</button>
+                    <div id="update-user-response" class="response"></div>
+                </div>
+            </div>
+
+            <!-- Tab DELETE -->
+            <div id="tab4" class="tab-content">
+                <div class="api-section">
+                    <h3 class="api-title">Elimina utente</h3>
+                    <div class="form-group">
+                        <label for="delete-id">ID Utente:</label>
+                        <input type="number" id="delete-id" placeholder="ID utente da eliminare">
+                    </div>
+                    <button onclick="deleteUser()">DELETE /?id=ID (Elimina utente)</button>
+                    <div id="delete-user-response" class="response"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
