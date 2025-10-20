@@ -70,6 +70,7 @@
 
  button:hover {
      background-color: #2980b9;
+     color:white;
  }
 
  .response {
@@ -105,7 +106,8 @@
 
  .tab-button {
      padding: 10px 20px;
-     background: #eee;
+     background: #ccc;
+     color: #3498db;
      border: 1px solid #ddd;
      border-bottom: none;
      cursor: pointer;
