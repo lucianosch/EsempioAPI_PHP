@@ -3,15 +3,27 @@
 ###
 GET http://localhost/~luciano/phpapi/api.php
 
+GET http://localhost:5500/api.php
+
 ###
 # Legge un utente specifico (id=2)
 ###
-GET http://localhost/~luciano/phpapi/api.php?id=1
+GET http://localhost/~luciano/phpapi/api.php?id=2
+
+GET http://localhost:5500/api.php?id=2
 
 ###
 # Inserisce un nuovo utente
 ###
 POST http://localhost/~luciano/phpapi/api.php
+Content-Type: application/json
+
+{
+    "name":"Pippo",
+    "eta":30
+}
+
+POST http://localhost/~luciano/api.php
 Content-Type: application/json
 
 {
@@ -30,7 +42,18 @@ Content-Type: application/json
     "eta":20
 }
 
+PUT http://localhost/~luciano/api.php?id=5
+Content-Type: application/json
+
+{
+    "name":"Pippo",
+    "eta":20
+}
+
 ###
 # Cancella un utente specificato (id=5)
 ###
 DELETE http://localhost/~luciano/phpapi/api.php?id=5
+
+DELETE http://localhost/~luciano/api.php?id=5
+
